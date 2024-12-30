@@ -1,5 +1,5 @@
 Package: nbi.package
-Title: #Change later
+Title: National Bridge Inventory Configuration Package
 Version: 0.0.0.9000
 Authors@R: 
     person("Samuel-Kei", "Goon", , "samuel-kei.goon@dot.gov", role = c("aut", "cre"),
