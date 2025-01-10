@@ -29,4 +29,5 @@ STRUCTURE_TYPE_043 <- function(nbi_data){
                                          "21" = "Segmental Box Girder",
                                          "22" = "Channel Beam",
                                          "00" = "Other")
+  return(nbi_data)
 }

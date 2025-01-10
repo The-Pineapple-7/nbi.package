@@ -57,6 +57,9 @@ STATE_CODE_recode <- function(nbi_data){
                                "54" = "West Virginia",
                                "55" = "Wisconsin",
                                "56" = "Wyoming",
-                               "72" = "Puerto Rico")
-  nbi_data$STATE_CODE_001 <- dplyr::rename(nbi_data, STATE_001 = STATE_CODE_001)
+                               "66" = "Guam",
+                               "72" = "Puerto Rico",
+                               "78" = "U.S. Virgin Islands")
+  nbi_data <- dplyr::rename(nbi_data, STATE_001 = STATE_CODE_001)
+  return(nbi_data)
 }

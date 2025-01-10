@@ -1,5 +1,5 @@
 FUNCTIONAL_CLASS_026_recode <- function(nbi_data) {
-  #' Recoding Maintenance to make it understandable without the coding guide
+  #' Recoding Functional Classification to make it understandable without the coding guide
   #'
   #' @param nbi_data A csv file using the NBI coding system and format
   #'
@@ -18,4 +18,5 @@ FUNCTIONAL_CLASS_026_recode <- function(nbi_data) {
                                                  "16" = "Urban Minor Arterial",
                                                  "17" = "Urban Collector",
                                                  "19" = "Urban Local")
+  return(nbi_data)
 }

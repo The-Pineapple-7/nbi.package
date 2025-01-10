@@ -5,10 +5,10 @@ BRIDGE_CONDITION_recode <- function(nbi_data) {
   #'
   #' @return Bridge condition in full words
   #' @export
-  BRIDGE_CONDITION <- dplyr::recode(nbi_data$BRIDGE_CONDITION,
+  nbi_data$BRIDGE_CONDITION <- dplyr::recode(nbi_data$BRIDGE_CONDITION,
                                       "G" = "Good",
                                       "F" = "Fair",
                                       "P" = "Poor")
 
-  return(BRIDGE_CONDITION)
+  return(nbi_data)
 }

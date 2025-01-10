@@ -35,4 +35,5 @@ OWNER_022_recode <- function(nbi_data) {
                                             "75" = "NASA",
                                             "76" = "Metropolitan Washington Airports Service",
                                             "80" = "Unknown")
+  return(nbi_data)
 }
