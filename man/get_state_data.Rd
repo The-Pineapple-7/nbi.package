@@ -19,5 +19,5 @@ Extracting NBI state data into the global environment
 }
 \examples{
 state <- "Maryland"
-get_data("MD", 2022)
+get_state_data("MD", 2022)
 }

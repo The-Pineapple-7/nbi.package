@@ -2,7 +2,7 @@
 % Please edit documentation in R/FUNCTIONAL_CLASS_026.R
 \name{FUNCTIONAL_CLASS_026_recode}
 \alias{FUNCTIONAL_CLASS_026_recode}
-\title{Recoding Maintenance to make it understandable without the coding guide}
+\title{Recoding Functional Classification to make it understandable without the coding guide}
 \usage{
 FUNCTIONAL_CLASS_026_recode(nbi_data)
 }
@@ -13,5 +13,5 @@ FUNCTIONAL_CLASS_026_recode(nbi_data)
 The Funcional Classification of the inventory road in full words
 }
 \description{
-Recoding Maintenance to make it understandable without the coding guide
+Recoding Functional Classification to make it understandable without the coding guide
 }

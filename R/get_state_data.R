@@ -10,7 +10,7 @@ get_state_data <- function(state = "Alabama", year = 2024){
   #'
   #' @examples
   #' state <- "Maryland"
-  #' get_data("MD", 2022)
+  #' get_state_data("MD", 2022)
   if(year < 1992 | year > 2024) {
     print("Please enter a valid year (1992 - 2024)")
     return()

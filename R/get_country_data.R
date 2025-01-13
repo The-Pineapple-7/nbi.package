@@ -27,7 +27,7 @@ get_country_data <- function(year = 2024, non_highway = "FALSE"){
       website_link <- paste("https://www.fhwa.dot.gov/bridge/nbi/", year, "hwybronefiledel.zip", sep = "")
     }
   }
-  download.file(website_link, destfile = "nbi_data.zip")
+  utils::download.file(website_link, destfile = "nbi_data.zip")
   nbi_data <- readr::read_csv("nbi_data.zip")
   file.remove("nbi_data.zip")
   return(nbi_data)

@@ -5,8 +5,8 @@ Authors@R:
     person("Samuel-Kei", "Goon", , "samuel-kei.goon@dot.gov", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: A variety of functions to recode National Bridge Inventory datasets to make them easier to read and utilize in visualizations.
-License: Public Domain U.S. Government
-URL: http://www.usa.gov/publicdomain/label/1.0/
+License: CC BY 4.0 + file LICENSE
+URL: https://github.com/The-Pineapple-7/nbi.package.git
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
