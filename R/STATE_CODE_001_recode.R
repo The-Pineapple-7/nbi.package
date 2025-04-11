@@ -1,5 +1,5 @@
 STATE_CODE_001_recode <- function(nbi_data){
-  #' Recoding and renaming State_Code to make it easier to understand without the coding guide
+  #' Recoding and renaming State Code to make it easier to understand without the coding guide
   #'
   #' @param nbi_data A csv file using the NBI coding system and format
   #'

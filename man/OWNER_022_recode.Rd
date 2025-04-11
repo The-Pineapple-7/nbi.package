@@ -2,7 +2,7 @@
 % Please edit documentation in R/OWNER_022_recode.R
 \name{OWNER_022_recode}
 \alias{OWNER_022_recode}
-\title{Recoding Maintenance to make it understandable without the coding guide}
+\title{Recoding Owner to make it understandable without the coding guide}
 \usage{
 OWNER_022_recode(nbi_data)
 }
@@ -13,5 +13,5 @@ OWNER_022_recode(nbi_data)
 Bridge owner in full words
 }
 \description{
-Recoding Maintenance to make it understandable without the coding guide
+Recoding Owner to make it understandable without the coding guide
 }

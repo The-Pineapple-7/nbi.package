@@ -2,7 +2,7 @@
 % Please edit documentation in R/STATE_CODE_001_recode.R
 \name{STATE_CODE_001_recode}
 \alias{STATE_CODE_001_recode}
-\title{Recoding and renaming State_Code to make it easier to understand without the coding guide}
+\title{Recoding and renaming State Code to make it easier to understand without the coding guide}
 \usage{
 STATE_CODE_001_recode(nbi_data)
 }
@@ -13,5 +13,5 @@ STATE_CODE_001_recode(nbi_data)
 State names insead of code
 }
 \description{
-Recoding and renaming State_Code to make it easier to understand without the coding guide
+Recoding and renaming State Code to make it easier to understand without the coding guide
 }

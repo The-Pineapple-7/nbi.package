@@ -2,7 +2,7 @@
 % Please edit documentation in R/MAINTENANCE_021_recode.R
 \name{MAINTENANCE_021_recode}
 \alias{MAINTENANCE_021_recode}
-\title{Recoding Maintenance to make it understandable without the coding guide}
+\title{Recoding Maintenance Responsibility to make it understandable without the coding guide}
 \usage{
 MAINTENANCE_021_recode(nbi_data)
 }
@@ -13,5 +13,5 @@ MAINTENANCE_021_recode(nbi_data)
 Maintenance responsibility in full words
 }
 \description{
-Recoding Maintenance to make it understandable without the coding guide
+Recoding Maintenance Responsibility to make it understandable without the coding guide
 }

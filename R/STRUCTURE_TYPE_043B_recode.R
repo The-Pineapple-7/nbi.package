@@ -1,5 +1,5 @@
 STRUCTURE_TYPE_043 <- function(nbi_data){
-  #' Recoding Structure type to make it understandable without the coding guide
+  #' Recoding structure type to make it understandable without the coding guide
   #'
   #' @param nbi_data A csv file using the NBI coding system and format
   #'

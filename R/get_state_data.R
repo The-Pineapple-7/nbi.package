@@ -1,16 +1,16 @@
 get_state_data <- function(state = "Alabama", year = 2024){
-  #' This function extracts NBI state data from the FHWA website into the global environment.
+  #' Extracts NBI state data from the FHWA website into the global environment.
   #'
   #'
   #' @param state The state where the data was collected
   #' @param year The year when the data was collected
   #'
-  #' @return nbi csv file downloaded from the nbi website
+  #' @returns nbi csv file downloaded from the nbi website
   #' @export
   #'
   #' @examples
-  #' state <- "Maryland"
   #' get_state_data("MD", 2022)
+  #' get_state_data("Iowa", 1999)
   if(year < 1992 | year > 2024) {
     print("Please enter a valid year (1992 - 2024)")
     return()
@@ -92,15 +92,21 @@ get_state_data <- function(state = "Alabama", year = 2024){
                            "virgin islands" = "VI")
     state <- toupper(state) #Making sure user-input state abbreviations are valid
     if (state %in% state_list) {
-      year_2 <- substr(year, 3,4)
-      website_link <- paste("https://www.fhwa.dot.gov/bridge/nbi/", year, "/delimited/", state, year_2, ".txt", sep = "")
-      suppressWarnings(nbi_data <- readr::read_csv(website_link))
-      return (STATE_CODE_001_recode(nbi_data))
+      file_name <- paste(state, "_nbi_data_", year, ".rda", sep = "")
+      setwd("data")
+      if (!file.exists(file_name)) {
+        year_2 <- substr(year, 3,4)
+        website_link <- paste("https://www.fhwa.dot.gov/bridge/nbi/", year, "/delimited/", state, year_2, ".txt", sep = "")
+        nbi_data <- readr::read_csv(website_link)
+        save(nbi_data, file = file_name)
+      }
     }
     else {
       print("State not availible. (Check spelling or state abbreviation)")
       return()
     }
+    load(file = file_name)
+    setwd("../")
+    return(nbi_data)
   }
-
 }

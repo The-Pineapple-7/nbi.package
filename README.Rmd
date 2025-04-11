@@ -1,12 +1,19 @@
 ---
-output:
-  github_document
+output: github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
-# National Bridge Inventory
+# nbi.package
 
 <!-- badges: start -->
 
@@ -40,3 +47,26 @@ devtools::install_github("The-Pineapple-7/nbi.package")
 * OWNER_022_recode, for recoding bridge owner.
 * FUNCTIONAL_CLASS_026_recode, for recoding functional classification.
 * STRUCTURE_TYPE_043, for recoding the structure type.
+
+
+## Example
+
+This is how you should use get_country_data:
+
+```{r example}
+library(nbi.package)
+# The default settings are the year 2024, and FALSE for only highways and no non-highways and routes under bridges
+nbi_2022 <- get_country_data(2022, FALSE)
+```
+
+You can also use a pre-downloaded zip file as long as it is in the working directory.
+
+This is how you should use get_state_data:
+```{r}
+library(nbi.package)
+# The default settings are Alabama for the state and the year 2024
+nbi_MD_2023 <- get_state_data("MD", 2023)
+# You can also use State names
+nbi_IA_2024 <- get_state_data("Iowa")
+```
+

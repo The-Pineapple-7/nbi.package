@@ -1,5 +1,5 @@
 OWNER_022_recode <- function(nbi_data) {
-  #' Recoding Maintenance to make it understandable without the coding guide
+  #' Recoding Owner to make it understandable without the coding guide
   #'
   #' @param nbi_data A csv file using the NBI coding system and format
   #'
