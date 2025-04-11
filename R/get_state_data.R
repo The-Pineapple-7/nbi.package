@@ -1,5 +1,5 @@
 get_state_data <- function(state = "Alabama", year = 2024){
-  #' Extracting NBI state data into the global environment
+  #' This function extracts NBI state data from the FHWA website into the global environment.
   #'
   #'
   #' @param state The state where the data was collected
@@ -17,7 +17,7 @@ get_state_data <- function(state = "Alabama", year = 2024){
   }
   else {
     state_list <- list("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "MD", "MA", "MI", "MN", "MS", "MO", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY", "GU", "PR", "VI")
-    state <- tolower(state) #Lowering cases to minimise errors by typo of incorrect case
+    state <- tolower(state) #Lowering cases to minimize errors by typo of incorrect case
     state <- dplyr::recode(state,
                            "alabama" = "AL",
                            "alaska" = "AK",
@@ -94,8 +94,8 @@ get_state_data <- function(state = "Alabama", year = 2024){
     if (state %in% state_list) {
       year_2 <- substr(year, 3,4)
       website_link <- paste("https://www.fhwa.dot.gov/bridge/nbi/", year, "/delimited/", state, year_2, ".txt", sep = "")
-      nbi_data <- readr::read_csv(website_link)
-      return(nbi_data)
+      suppressWarnings(nbi_data <- readr::read_csv(website_link))
+      return (STATE_CODE_001_recode(nbi_data))
     }
     else {
       print("State not availible. (Check spelling or state abbreviation)")

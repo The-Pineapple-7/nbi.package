@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_country_data.R
 \name{get_country_data}
 \alias{get_country_data}
-\title{Extracting NBI data into the global environment}
+\title{This function extracts NBI country data from the FHWA website into the global environment for use in R.}
 \usage{
 get_country_data(year = 2024, non_highway = "FALSE")
 }
@@ -15,5 +15,5 @@ get_country_data(year = 2024, non_highway = "FALSE")
 nbi csv file downloaded from the nbi website
 }
 \description{
-Extracting NBI data into the global environment
+This function extracts NBI country data from the FHWA website into the global environment for use in R.
 }
