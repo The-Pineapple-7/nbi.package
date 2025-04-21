@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_state_data.R
 \name{get_state_data}
 \alias{get_state_data}
-\title{This function extracts NBI state data from the FHWA website into the global environment.}
+\title{Extracts NBI state data from the FHWA website into the global environment.}
 \usage{
 get_state_data(state = "Alabama", year = 2024)
 }
@@ -15,9 +15,9 @@ get_state_data(state = "Alabama", year = 2024)
 nbi csv file downloaded from the nbi website
 }
 \description{
-This function extracts NBI state data from the FHWA website into the global environment.
+Extracts NBI state data from the FHWA website into the global environment.
 }
 \examples{
-state <- "Maryland"
 get_state_data("MD", 2022)
+get_state_data("Iowa", 1999)
 }

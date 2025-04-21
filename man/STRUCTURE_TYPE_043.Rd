@@ -2,7 +2,7 @@
 % Please edit documentation in R/STRUCTURE_TYPE_043B_recode.R
 \name{STRUCTURE_TYPE_043}
 \alias{STRUCTURE_TYPE_043}
-\title{Recoding Structure type to make it understandable without the coding guide}
+\title{Recoding structure type to make it understandable without the coding guide}
 \usage{
 STRUCTURE_TYPE_043(nbi_data)
 }
@@ -13,5 +13,5 @@ STRUCTURE_TYPE_043(nbi_data)
 Latitude variable in decimal degree format
 }
 \description{
-Recoding Structure type to make it understandable without the coding guide
+Recoding structure type to make it understandable without the coding guide
 }

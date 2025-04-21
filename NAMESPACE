@@ -2,8 +2,7 @@
 
 export(BRIDGE_CONDITION_recode)
 export(FUNCTIONAL_CLASS_026_recode)
-export(LAT_016_conversion)
-export(LONG_017_conversion)
+export(LatLong_conversion)
 export(MAINTENANCE_021_recode)
 export(OWNER_022_recode)
 export(RECORD_TYPE_005A_recode)
