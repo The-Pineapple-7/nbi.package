@@ -39,9 +39,9 @@ devtools::install_github("The-Pineapple-7/nbi.package")
 
 * get_country_data, for downloading or reading NBI data of the entire United States.
 * get_state_data, for downloading NBI data of individual states.
-* LAT_016_conversion and LONG_017_conversion, for converting latitude and longitude data into decimal format.
+* LatLong_conversion, for converting latitude and longitude data into decimal format.
 * STATE_CODE_001_recode, for recoding and renaming STATE_CODE_001.
-* RECORD_TYPE_005A_recode, for recoding record type
+* RECORD_TYPE_005A_recode, for recoding record type.
 * ROUTE_PREFIX_005B_recode, for recoding  and renaming route prefix.
 * MAINTENANCE_021_recode, for recoding maintenance responsibility.
 * OWNER_022_recode, for recoding bridge owner.

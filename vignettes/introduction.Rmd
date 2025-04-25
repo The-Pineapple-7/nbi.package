@@ -16,8 +16,12 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r, setup, include=FALSE}
 library(nbi.package)
+data_folder <- paste(.libPaths(),"/nbi.package/", sep = "")
+knitr::opts_knit$set(root.dir = data_folder)
+knitr::opts_knit$get("root.dir")
+getwd()
 ```
 
 NBI, or National Bridge Inventory, is a large collection of information obtained by the US government about bridges across the country. 
@@ -37,15 +41,16 @@ These functions share an input value, "year", which changes which year the infor
 To use these functions, you have to create an empty value to pipe the information into, in the following examples, the value is nbi_data. 
 
 ```{r}
-#nbi_data is the empty value being filled
-#The state being read is "MD" or Maryland, and the year being read is 2023
+# nbi_data is the empty value being filled
+# The state being read is "MD" or Maryland, and the year being read is 2023
+getwd()
 nbi_data <- get_state_data(state = "MD", year = 2023)
 ```
 
 # It should be noted there are default values added to get_state_data when either of the values are unchanged, the default state for get_state_data is "Alabama" and the default year is 2024
 
 ```{r}
-#The year being read is 2022, and the non-highway bridges are not being included
+# The year being read is 2022, and the non-highway bridges are not being included
 nbi_data <- get_country_data(year = 2022, non_highway = FALSE)
 ```
 
@@ -58,7 +63,10 @@ The majority of the functions listed in this package change the values of specif
 LatLong_conversion is a very useful function that recodes the latitude and longitude values into the decimal degrees format. Many visualization programs like Socrata can use latitude and longitude in decimal format to create a map of data points.
 
 ```{r}
-#This converts the information from the value nbi_data into the value nbi_converted_data
+# Creating nbi_data to save the get_state_data information into the global environment
+nbi_data <- get_state_data()
+# This converts the information from the value nbi_data into the value nbi_converted_data
 nbi_converted_data <- LatLong_conversion(nbi_data)
+nbi_converted_data %>% select(LAT_016:LONG_017)
 ```
 
