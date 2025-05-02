@@ -1,4 +1,4 @@
-get_country_data <- function(year = 2024, non_highway = "FALSE"){
+get_country_data <- function(year = 2024, non_highway = FALSE){
   #' Extracts NBI country data from the FHWA website into the global environment for use in R.
   #'
   #' @param year The year when the data was collected

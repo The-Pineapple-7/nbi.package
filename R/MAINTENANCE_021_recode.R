@@ -18,10 +18,15 @@ MAINTENANCE_021_recode <- function(nbi_data) {
                                      "27" = "Railroad",
                                      "31" = "State Toll Authority",
                                      "32" = "Local Toll Authority",
+                                     "40" = "Other Public Entity (i.e. Airport or Transit Authority)",
+                                     "56" = "U.S. Department of Veterans Affairs",
+                                     "57" = "GSA",
+                                     "58" = "Zoo/ Smithsonian",
+                                     "59" = "NSA",
                                      "60" = "Other Federal Agencies (not listed below)",
                                      "61" = "Indian Tribal Government",
                                      "62" = "Bureau of Indian Affairs",
-                                     "63" = "Bureau of Fish and Wildlife",
+                                     "63" = "U.S. Fish and Wildlife Service",
                                      "64" = "U.S. Forest Service",
                                      "66" = "National Park Service",
                                      "67" = "Tennessee Valley Authority",
@@ -34,6 +39,9 @@ MAINTENANCE_021_recode <- function(nbi_data) {
                                      "74" = "Army",
                                      "75" = "NASA",
                                      "76" = "Metropolitan Washington Airports Service",
-                                     "80" = "Unknown")
+                                     "77" = "Pentagon",
+                                     "78" = "USDA/ARS",
+                                     "79" = "DOE",
+                                     "80" = "Other or Unknown")
   return(nbi_data)
 }

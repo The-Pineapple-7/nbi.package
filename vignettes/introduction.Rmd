@@ -18,10 +18,10 @@ knitr::opts_chunk$set(
 
 ```{r, setup, include=FALSE}
 library(nbi.package)
+library(dplyr)
 data_folder <- paste(.libPaths(),"/nbi.package/", sep = "")
 knitr::opts_knit$set(root.dir = data_folder)
 knitr::opts_knit$get("root.dir")
-getwd()
 ```
 
 NBI, or National Bridge Inventory, is a large collection of information obtained by the US government about bridges across the country. 
@@ -34,27 +34,26 @@ Examples of the type of information contained within this dataset are:
 
 ## How to import data
 
-The functions "get_state_data" and "get_country_data" both import data directly from the download page at https://www.fhwa.dot.gov/bridge/nbi/ascii.cfm. 
+The functions `get_state_data` and `get_country_data` both import data directly from the download page at https://www.fhwa.dot.gov/bridge/nbi/ascii.cfm. 
 
-These functions share an input value, "year", which changes which year the information being imported was collected. get_state_data has a seperate input value called "state" which limits what information will be imported to whatever US state specified, this can either be the state initials (AL, MD) or the state name (Idaho). get_country_data has an input value called "non_highway" which includes information about non-highway and routes under bridges, the default is FALSE; to include this information, change the value to TRUE.
+These functions share an input value, "year", which changes which year the information being imported was collected. `get_state_data` has a seperate input value called "state" which limits what information will be imported to whatever US state specified, this can either be the state initials (AL, MD) or the state name (Idaho). `get_country_data` has an input value called "non_highway" which includes information about non-highway and routes under bridges, the default is FALSE; to include this information, change the value to TRUE.
 
 To use these functions, you have to create an empty value to pipe the information into, in the following examples, the value is nbi_data. 
 
 ```{r}
 # nbi_data is the empty value being filled
 # The state being read is "MD" or Maryland, and the year being read is 2023
-getwd()
 nbi_data <- get_state_data(state = "MD", year = 2023)
 ```
 
-# It should be noted there are default values added to get_state_data when either of the values are unchanged, the default state for get_state_data is "Alabama" and the default year is 2024
+It should be noted there are default values added to get_state_data when either of the values are unchanged, the default state for `get_state_data` is "Alabama" and the default year is 2024
 
 ```{r}
 # The year being read is 2022, and the non-highway bridges are not being included
 nbi_data <- get_country_data(year = 2022, non_highway = FALSE)
 ```
 
-# The default year of get_country_data is 2024, and the default value for non_highway is FALSE
+The default year of `get_country_data` is 2024, and the default value for non_highway is FALSE
 
 ## How to convert data
 
@@ -67,6 +66,6 @@ LatLong_conversion is a very useful function that recodes the latitude and longi
 nbi_data <- get_state_data()
 # This converts the information from the value nbi_data into the value nbi_converted_data
 nbi_converted_data <- LatLong_conversion(nbi_data)
-nbi_converted_data %>% select(LAT_016:LONG_017)
+nbi_converted_data %>% select(LAT_016:LONG_017) %>% slice_head(n = 10)
 ```
 

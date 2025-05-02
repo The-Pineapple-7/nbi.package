@@ -4,7 +4,7 @@
 \alias{get_country_data}
 \title{Extracts NBI country data from the FHWA website into the global environment for use in R.}
 \usage{
-get_country_data(year = 2024, non_highway = "FALSE")
+get_country_data(year = 2024, non_highway = FALSE)
 }
 \arguments{
 \item{year}{The year when the data was collected}
