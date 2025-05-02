@@ -21,7 +21,6 @@ library(nbi.package)
 library(dplyr)
 data_folder <- paste(.libPaths(),"/nbi.package/", sep = "")
 knitr::opts_knit$set(root.dir = data_folder)
-knitr::opts_knit$get("root.dir")
 ```
 
 NBI, or National Bridge Inventory, is a large collection of information obtained by the US government about bridges across the country. 

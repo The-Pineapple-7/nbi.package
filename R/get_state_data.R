@@ -12,7 +12,7 @@ get_state_data <- function(state = "Alabama", year = 2024){
   #' get_state_data("MD", 2022)
   #' get_state_data("Iowa", 1999)
   if(year < 1992 | year > 2024) {
-    print("Please enter a valid year (1992 - 2024)", quote = FALSE)
+    cat("\nPlease enter a valid year (1992 - 2024)")
     return()
   }
   else {
@@ -97,17 +97,17 @@ get_state_data <- function(state = "Alabama", year = 2024){
       if (!file.exists(file_name)) {
         year_2 <- substr(year, 3,4)
         website_link <- paste("https://www.fhwa.dot.gov/bridge/nbi/", year, "/delimited/", state, year_2, ".txt", sep = "")
-        print("-- Reading csv file to download nbi dataset --", quote = FALSE)
+        cat("\n-- Reading csv file to download nbi dataset --")
         nbi_data <- readr::read_csv(website_link)
-        print("-- Downloading dataset file into data folder --", quote = FALSE)
+        cat("\n-- Downloading dataset file into data folder --")
         save(nbi_data, file = file_name)
       }
     }
     else {
-      print("State not availible. (Check spelling or state abbreviation)", quote = FALSE)
+      cat("\nState not availible. (Check spelling or state abbreviation)")
       return()
     }
-    print("-- Reading rda file to input into global function --", quote = FALSE)
+    cat("\n-- Reading rda file to input into global function --")
     load(file = file_name)
     setwd("../")
     return(nbi_data)

@@ -13,6 +13,10 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{r, setup, include=FALSE}
+data_folder <- paste(.libPaths(),"/nbi.package/", sep = "")
+knitr::opts_knit$set(root.dir = data_folder)
+```
 # nbi.package
 
 <!-- badges: start -->
@@ -32,7 +36,9 @@ You can install the latest version from GitHub with:
 if(packageVersion("devtools") < "2.4.5") {
   install.packages("devtools")
 }
-devtools::install_github("The-Pineapple-7/nbi.package")
+if(packageVersion("nbi.package") < "0.0.0.9000"){
+  devtools::install_github("The-Pineapple-7/nbi.package")
+}
 ```
 
 ## Usage
@@ -44,9 +50,16 @@ devtools::install_github("The-Pineapple-7/nbi.package")
 * RECORD_TYPE_005A_recode, for recoding record type.
 * ROUTE_PREFIX_005B_recode, for recoding  and renaming route prefix.
 * MAINTENANCE_021_recode, for recoding maintenance responsibility.
-* OWNER_022_recode, for recoding bridge owner.
+* OWNER_022_recode, for recoding structure owner.
 * FUNCTIONAL_CLASS_026_recode, for recoding functional classification.
-* STRUCTURE_TYPE_043, for recoding the structure type.
+* DESIGN_LOAD_031_recode, for recoding the load weight the structure was designed for.
+* MEDIAN_CODE_033_recode, for recoding status of a structure's median.
+* STRUCTURE_FLARED_035_recode, for recoding the indicator showing if the structure was flared.
+* TRAFFIC_SAFETY_FEATURES_036_recode, for recoding the status of traffic safety features.
+* HISTORY_037_recode, recoding the historical significance.
+* NAVIGATION_038_recode, recoding navigation control status.
+* OPEN_CLOSED_POSTED_041_recode, recoding operational status.
+* STRUCTURE_TYPE_043, for recoding the kind of material and structure type.
 
 More usage information is availible in the vignettes.
 
@@ -65,7 +78,7 @@ You can also use a pre-downloaded zip file as long as it is in the working direc
 
 This is how you should use get_state_data:
 ```{r}
-nbi_MD_2023 <- get_state_data("MD", 2023)
+nbi_MD_2023 <- get_state_data("MD", year = 2023)
 # You can also use State names
 nbi_IA_2024 <- get_state_data("Iowa")
 ```
