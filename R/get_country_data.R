@@ -11,7 +11,7 @@ get_country_data <- function(year = 2024, non_highway = FALSE){
   #' get_country_data(2023, TRUE)
   #' get_country_data()
   if(year < 1992 | year > 2024) {
-    print("Please enter a valid year (1992 - 2024)", quote = FALSE)
+    cat("\nPlease enter a valid year (1992 - 2024)")
     return()
   }
   else if(non_highway == TRUE) {
@@ -19,7 +19,7 @@ get_country_data <- function(year = 2024, non_highway = FALSE){
      website_link <- paste("https://www.fhwa.dot.gov/bridge/nbi/", year, "allstatesallrecsdel.zip", sep = "")
    }
    else {
-     print("Non-highway data not availible for this year (2013-2024 only)", quote = FALSE)
+     cat("\nNon-highway data not availible for this year (2013-2024 only)")
      return()
    }
   }
@@ -34,13 +34,15 @@ get_country_data <- function(year = 2024, non_highway = FALSE){
   file_name <- paste(substr(website_link, 37, sum(nchar(website_link) - 3)), "rda", sep = "")
   setwd("data")
   if(!file.exists(file_name)) {
-    print("-- Downloading file into data folder --", quote = FALSE)
+    cat("\n-- Downloading file into data folder --")
     utils::download.file(website_link, destfile = file_name)
     nbi_data <- readr::read_csv(file_name)
     save(nbi_data, file = file_name)
   }
-  print("-- Reading rda file to input into global function --", quote = FALSE)
-  load(file = file_name)
+  else{
+    cat("\n-- Reading rda file to input into global function --")
+    load(file = file_name)
+  }
   setwd("../")
   return(nbi_data)
 }

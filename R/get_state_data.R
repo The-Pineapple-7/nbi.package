@@ -107,9 +107,9 @@ get_state_data <- function(state = "Alabama", year = 2024){
       cat("\nState not availible. (Check spelling or state abbreviation)")
       return()
     }
-    cat("\n-- Reading rda file to input into global function --")
-    load(file = file_name)
+    cat("\n-- Reading rda file to input into global function --\n")
+    nbi_rda <- load(file_name)
     setwd("../")
-    return(nbi_data)
+    return(get(nbi_rda))
   }
 }
