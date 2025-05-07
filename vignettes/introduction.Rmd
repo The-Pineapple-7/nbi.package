@@ -1,12 +1,18 @@
 ---
 title: "Introduction to nbi"
-output: rmarkdown::html_vignette
+output: github_document
+knit: (function(input, ...) {
+    rmarkdown::render(
+      input,
+      output_dir = "vignettes"
+    )
+  })
 description: >
   Start here if this is your first time using nbi.package. You'll learn what nbi data is, how to import data to begin working on it, and example of how this package should be used.
 vignette: >
   %\VignetteIndexEntry{Introduction to nbi}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
 ---
 
 ```{r, include = FALSE}
