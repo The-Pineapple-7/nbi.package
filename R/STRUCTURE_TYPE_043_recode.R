@@ -1,5 +1,5 @@
 STRUCTURE_TYPE_043_recode <- function(nbi_data){
-  #' Recoding structure kind or material and type of design to make it understandable without the coding guide
+  #' Recoding structure kind of material and type of design to make it understandable without the coding guide
   #'
   #' @param nbi_data A csv file using the NBI coding system and format
   #'

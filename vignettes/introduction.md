@@ -32,6 +32,21 @@ information into, in the following examples, the value is nbi\_data.
 # nbi_data is the empty value being filled
 # The state being read is "MD" or Maryland, and the year being read is 2023
 nbi_data <- get_state_data(state = "MD", year = 2023)
+#> [1] -- Reading csv file to download nbi dataset --
+#> Warning: One or more parsing issues, call `problems()` on your data frame for details,
+#> e.g.:
+#>   dat <- vroom(...)
+#>   problems(dat)
+#> Rows: 5473 Columns: 123
+#> ── Column specification ────────────────────────────────────────────────────────
+#> Delimiter: ","
+#> chr (48): STRUCTURE_NUMBER_008, ROUTE_NUMBER_005D, HIGHWAY_DISTRICT_002, COU...
+#> dbl (73): STATE_CODE_001, RECORD_TYPE_005A, ROUTE_PREFIX_005B, SERVICE_LEVEL...
+#> lgl  (2): CRITICAL_FACILITY_006B, TEMP_STRUCTURE_103
+#> 
+#> ℹ Use `spec()` to retrieve the full column specification for this data.
+#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+#> [1] -- Downloading dataset file into data folder --
 #> [1] -- Reading rda file to input into global function --
 ```
 
@@ -42,6 +57,20 @@ when either of the values are unchanged, the default state for
 ``` r
 # The year being read is 2022, and the non-highway bridges are not being included
 nbi_data <- get_country_data(year = 2022, non_highway = FALSE)
+#> [1] -- Downloading file into data folder --
+#> Warning: One or more parsing issues, call `problems()` on your data frame for details,
+#> e.g.:
+#>   dat <- vroom(...)
+#>   problems(dat)
+#> Rows: 620669 Columns: 123
+#> ── Column specification ────────────────────────────────────────────────────────
+#> Delimiter: ","
+#> chr (52): STATE_CODE_001, STRUCTURE_NUMBER_008, ROUTE_NUMBER_005D, HIGHWAY_D...
+#> dbl (69): RECORD_TYPE_005A, ROUTE_PREFIX_005B, SERVICE_LEVEL_005C, DIRECTION...
+#> lgl  (2): CRITICAL_FACILITY_006B, TEMP_STRUCTURE_103
+#> 
+#> ℹ Use `spec()` to retrieve the full column specification for this data.
+#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 #> [1] -- Reading rda file to input into global function --
 ```
 
@@ -67,6 +96,21 @@ to create a map of data points.
 ``` r
 # Creating nbi_data to save the get_state_data information into the global environment
 nbi_data <- get_state_data()
+#> [1] -- Reading csv file to download nbi dataset --
+#> Warning: One or more parsing issues, call `problems()` on your data frame for details,
+#> e.g.:
+#>   dat <- vroom(...)
+#>   problems(dat)
+#> Rows: 16205 Columns: 123
+#> ── Column specification ────────────────────────────────────────────────────────
+#> Delimiter: ","
+#> chr (50): STATE_CODE_001, STRUCTURE_NUMBER_008, ROUTE_NUMBER_005D, HIGHWAY_D...
+#> dbl (71): RECORD_TYPE_005A, ROUTE_PREFIX_005B, SERVICE_LEVEL_005C, DIRECTION...
+#> lgl  (2): CRITICAL_FACILITY_006B, TEMP_STRUCTURE_103
+#> 
+#> ℹ Use `spec()` to retrieve the full column specification for this data.
+#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+#> [1] -- Downloading dataset file into data folder --
 #> [1] -- Reading rda file to input into global function --
 # This converts the information from the value nbi_data into the value nbi_converted_data
 nbi_converted_data <- LatLong_conversion(nbi_data)

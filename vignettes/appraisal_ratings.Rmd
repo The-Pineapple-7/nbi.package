@@ -1,0 +1,70 @@
+---
+title: "Indicate the appraisal ratings"
+output: github_document
+knit: (function(input, ...) {
+    rmarkdown::render(
+      input,
+      output_dir = "vignettes"
+    )
+  })
+description: >
+  This document has the specific information about how the condition of the structure is rated in items 58-62
+vignette: >
+  %\VignetteIndexEntry{Indicate the appraisal ratings}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Items 67, 68, 69, 71, and 72 have different definitions of each rating based on the designated data in the inventory. Average Daily Traffic will be shortened to ADT.
+
+## Item 67 guide:
+
+* N = Not Applicable .
+* 9 = Superior to present desirable criteria - Greater than MS18 load supported.
+* 8 = Equal to present desirable criteria - MS18 load supported.
+* 7 = Better than present minimum criteria - MS15.5 load supported.
+* 6 = Equal to present minimum criteria - MS11.5 load supported when under 500 ADT, MS12.5 load supported when between 501-5000 ADT, MS13.5 load supported when over 5000 ADT.
+* 5 = Somewhat better than minimum adequacy to tolerate being left in place as is - MS9 load supported when under 500 ADT, MS10 load supported when between 501-5000 ADT, MS11 load supported when over 5000 ADT.
+* 4 = Meets minimum tolerable limits to be left in place as is - MS6 load supported when under 500 ADT, MS7 load supported when between 501-5000 ADT, MS9 load supported when over 5000 ADT.
+* 3 = Basically intolerable requiring high priority of corrective action - Inventory rating less than value in rating code of 4 and requiring corrective action. 
+* 2 = Basically intolerable requiring high priority of replacement - Inventory rating less than value in rating       code of 4 and requiring replacement. 
+* 0 = Bridge closed - Bridge closed due to structural condition.
+
+## Item 68 guide:
+
+
+Item 68 determines acceptable bridge roadway width, which is measured in meters. ADT ranges is what determines whether the roadway width meets acceptible standards. 
+
+```{r}
+ADT_ranges <- c("0-100","101-400","401-1000","1001-2000","2001-5000","5000")
+Code_9 <- c(">9.8", ">11.0", ">12.2", ">13.4", ">13.4", ">13.4")
+Code_8 <- c("9.8", "11.0", "12.2", "13.4", "13.4", "13.4")
+Code_7 <- c("8.5", "9.8", "11.0", "12.2", "13.4", "13.4")
+Code_6 <- c("7.3", "8.5", "9.1", "10.4", "12.2", "13.4")
+Code_5 <- c("6.1", "7.3", "7.9", "8.5", "10.4", "11.6")
+Code_4 <- c("5.5", "6.1", "6.7", "7.3", "8.5", "9.8 (8.5)")
+Code_3 <- c("4.9", "5.5", "6.1", "6.7", "7.9", "9.1 (7.9)")
+deck_geometry_guide <- c(Code_9, Code_8, Code_7, Code_6, Code_5, Code_4, Code_3)
+dimension_names <- list("acceptible standards codes", "bridge width")
+deck_geometry_guide <- matrix(deck_geometry_guide, ncol = 6, byrow = TRUE, dimnames = dimension_names)
+names(deck_geometry_guide) <- ADT_ranges
+```
+
+
+* N = Not Applicable.
+* 9 = Superior to present desirable criteria - 
+* 8 = Equal to present desirable criteria - 
+* 7 = Better than present minimum criteria - 
+* 6 = Equal to present minimum criteria - 
+* 5 = Somewhat better than minimum adequacy to tolerate being left in place as is - 
+* 4 = Meets minimum tolerable limits to be left in place as is - 
+* 3 = Basically intolerable requiring high priority of corrective action - 
+* 2 = Basically intolerable requiring high priority of replacement - Any width less than required for a rating code of 3 and structure is open. 
+* 0 = Bridge closed.
